@@ -21,7 +21,9 @@ defmodule MixNpm.Mixfile do
 
   defp deps do
     [
-      {:dogma, "~> 0.1", only: :dev}
+      {:dogma, "~> 0.1", only: :dev},
+      {:ex_doc, "~> 0.14", only: :dev}
+
     ]
   end
 
