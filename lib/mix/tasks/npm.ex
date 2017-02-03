@@ -11,9 +11,10 @@ defmodule Mix.Tasks.Npm do
   """
 
   def run(args) do
-    Mix.shell.info("npm #{Enum.join(args, " ")}")
-    {output, status} = System.cmd("npm", args, stderr_to_stdout: true)
-    Mix.shell.info(output)
+    cmd = Enum.join(["npm"] ++ args, " ")
+
+    Mix.shell.info(cmd)
+    status = Mix.shell.cmd(cmd, stderr_to_stdout: true)
     case status do
       0 -> :ok
       _ -> raise "npm command failure exit code: #{status}"
