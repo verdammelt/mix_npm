@@ -12,7 +12,7 @@ defmodule Mix.Tasks.Npm do
 
   def run(args) do
     Mix.shell.info("npm #{Enum.join(args, " ")}")
-    {output, status} = System.cmd("npm", args)
+    {output, status} = System.cmd("npm", args, stderr_to_stdout: true)
     Mix.shell.info(output)
     case status do
       0 -> :ok
