@@ -21,14 +21,13 @@ defmodule MixNpm.Mixfile do
 
   defp deps do
     [
-      {:dialyxir, "~> 0.4", only: :dev, runtime: false},
       {:dogma, "~> 0.1", only: :dev}
     ]
   end
 
   defp aliases do
     [
-      "build": ["compile", "dogma --format=flycheck", "dialyzer"]
+      "build": ["compile", "dogma --format=flycheck"]
     ]
   end
 end
